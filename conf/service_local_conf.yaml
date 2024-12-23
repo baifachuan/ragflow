@@ -1,0 +1,87 @@
+ragflow:
+  host: 0.0.0.0
+  http_port: 9380
+mysql:
+  name: 'ragflow'
+  user: 'root'
+  password: 'admin'
+  host: '192.168.5.108'
+  port: 3306
+  max_connections: 100
+  stale_timeout: 30
+postgres:
+  name: 'ragflow'
+  user: 'rag_flow'
+  password: 'infini_rag_flow'
+  host: '127.0.0.1'
+  port: 5432
+  max_connections: 100
+  stale_timeout: 30
+minio:
+  user: 'admin'
+  password: 'dd4c7d5e-08f0-4b32-b628-45821094bfe4'
+  host: '192.168.5.108:9000'
+  import_bucket: 'fcbai'
+#azure:
+#  auth_type: 'sas'
+#  container_url: 'container_url'
+#  sas_token: 'sas_token'
+azure:
+  auth_type: 'spn'
+  account_url: 'https://sadapdevn301.dfs.core.chinacloudapi.cn'
+  client_id: '3fbbddd3-bc49-410a-bd24-4003451c94b7'
+  secret: 'a4sZcs6SJQO50vk2y~ZT-~_6nPy.VLgCJ8'
+  tenant_id: 'eef727ff-82de-4c60-902b-830774836bfe'
+  container_name: 'dws-file-ds-handyref'
+  default_root_path: ''
+s3:
+  endpoint: 'endpoint'
+  access_key: 'access_key'
+  secret_key: 'secret_key'
+  region: 'region'
+es:
+  hosts: 'http://192.168.5.107:9200,http://192.168.5.108:9200,http://192.168.5.109:9200'
+  username: 'elastic'
+  password: 'naPMjKBnP91HBr**bh_6'
+redis:
+  db: 1
+  password: 'infini_rag_flow'
+  host: '192.168.5.108:6379'
+user_default_llm:
+  factory: 'Tongyi-Qianwen'
+  api_key: 'sk-xxxxxxxxxxxxx'
+  base_url: ''
+
+extend_tenant_llm:
+  llm_factory: 'OpenAI'
+  llm_name: 'xiaobu-embedding'
+  model_type: 'embedding'
+  api_key: 'sk-xxxxxxxxxxxxx'
+  api_base: 'http://192.168.5.108:8082/v1'
+
+oauth:
+  github:
+    client_id: xxxxxxxxxxxxxxxxxxxxxxxxx
+    secret_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    url: https://github.com/login/oauth/access_token
+  feishu:
+    app_id: cli_xxxxxxxxxxxxxxxxxxx
+    app_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    app_access_token_url: https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal
+    user_access_token_url: https://open.feishu.cn/open-apis/authen/v1/oidc/access_token
+    grant_type: 'authorization_code'
+  keycloak:
+    url: https://tst-handyref.novonordiskchina.cn/keycloak/
+    client_id: ragflow
+    realm: gluon-meson
+authentication:
+  client:
+    switch: false
+    http_app_key:
+    http_secret_key:
+  site:
+    switch: false
+permission:
+  switch: false
+  component: false
+  dataset: false

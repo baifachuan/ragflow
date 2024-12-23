@@ -4,6 +4,7 @@ import { appName } from './src/conf.json';
 import routes from './src/routes';
 
 export default defineConfig({
+  mfsu: false,
   title: appName,
   outputPath: 'dist',
   alias: { '@parent': path.resolve(__dirname, '../') },
@@ -14,7 +15,7 @@ export default defineConfig({
   esbuildMinifyIIFE: true,
   icons: {},
   hash: true,
-  favicons: ['/logo.svg'],
+  favicons: ['/logo.png'],
   clickToComponent: {},
   history: {
     type: 'browser',
@@ -34,7 +35,7 @@ export default defineConfig({
   proxy: [
     {
       context: ['/api', '/v1'],
-      target: 'http://127.0.0.1:9380/',
+      target: 'http://api.baifachuan.com/ragflow',
       changeOrigin: true,
       ws: true,
       logger: console,

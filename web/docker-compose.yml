@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  kb-engine-ui:
+    image: wisdom-cloud/kb-engine-ui:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wisdom-cloud-usecase-ui
+    ports:
+      - "12015:80"
+    restart: unless-stopped
